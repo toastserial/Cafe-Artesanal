@@ -1,0 +1,300 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-size: 100%;
+    font-size: 1em;
+    font-size: 1rem;
+    --primaryBgColor: black;
+    --primaryTxColor: #FFF;
+    overflow-x: hidden;
+
+}
+
+body.dark {
+    --primaryBgColor: #FFF;
+    --primaryTxColor: #333;
+}
+
+div {
+    display: block;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: #333;
+    color: var(--primaryTxColor);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease, opacity 0.3s ease; 
+}
+
+/* Estilos para el botón de menú */
+.hamburger {
+    display: none; 
+    cursor: pointer;
+    margin-right: 20px; 
+}
+
+/* Estilos para los tres elementos del botón de menú */
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 5px 0;
+    transition: transform 0.3s ease; 
+}
+
+/* Estilos para el botón de menú activado (mostrando el menú) */
+header.active .menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header.active .menu-list li {
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+}
+
+header ul {
+    display: none;
+}
+
+header.active ul li {
+    padding: 10px 20px;
+    display: block; 
+}
+
+header.active .hamburger div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+header.active .hamburger div:nth-child(2) {
+    opacity: 0;
+}
+
+header.active .hamburger div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+
+/* Cambia el fondo y la opacidad cuando el usuario hace scroll */
+body.scrolled header {
+    background-color: var(--primaryBgColor);
+    opacity: 0.9; 
+}
+
+header h1 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    color: var(--primaryTxColor);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header ul li:last-child{ 
+    display:none;
+    list-style: none;
+}
+
+header h1 img {
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: url(./imagenes/backgroundcoffee.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    text-align: center;
+    color: #FFF;
+    position: relative;
+    margin-top: 60px;
+}
+
+.hero h2{
+    font-size: 36px;
+}
+
+
+.hero p {
+    font-size: 18px; 
+    margin-top: 100px;
+}
+
+
+/* Estilos para la sección nosotros*/
+.acercade {
+    background-color: #333;
+    color: #FFF;
+    padding: 100px 20px; 
+    text-align: left; 
+    border-top: 5px solid black;
+    border-bottom: 5px solid black; 
+}
+
+.acercade h2 {
+    font-size: 36px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+}
+
+.acercade p {
+    font-size: 18px; 
+    margin: 10px 0; 
+}
+
+/*Espacio de los productos*/
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px; 
+    padding: 20px; 
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.product {
+    flex-basis: calc(33.33% - 20px); 
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px; 
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+.product button {
+    background-color: #333;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; 
+}
+
+.product-info {
+    font-size: 18px;
+    margin-bottom: 20px; 
+}
+
+.product h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; 
+}
+
+.product p {
+    font-size: 18px;
+    color: #FFA500;
+}
+
+/* Estilos para el footer de contacto */
+.contact-footer {
+    color: #FFF; 
+    padding: 35px 0; 
+    text-align: center; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); 
+    background-color: #333;
+    width: 100vw; 
+    margin-top: 66px; 
+}
+
+.contact-footer p {
+    font-size: 16px; 
+    margin: 10px 0; 
+}
+
+/*Adaptando para tablet*/
+@media (min-width: 720px) {
+    header ul {
+        display: flex; 
+        position: static;
+        background-color: transparent;
+        width: auto; 
+    }
+
+    header ul li:last-child{
+        display: initial;
+    }
+    header h1 span {
+        display: initial;
+        margin-left: 0.75rem
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Aaptando para dispositivos móviles */
+@media (max-width: 719px) {
+    header ul {
+        display: none; 
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        flex-basis: 100%; 
+        margin-bottom: 20px; 
+    }
+}
+
+
